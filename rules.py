@@ -1,5 +1,10 @@
 def valid_move(board, orientation, row, col):
+    orientation = orientation.upper()
+
     if orientation not in {"H", "V"}:
+        return False
+
+    if not isinstance(row, int) or not isinstance(col, int):
         return False
 
     if orientation == "H":
